@@ -19,6 +19,7 @@ public sealed class TerminalUi
         Console.WriteLine("  scan     Discover fictional sandbox nodes");
         Console.WriteLine("  breach   Run a simulated training-vault breach");
         Console.WriteLine("  decrypt  Decode a randomly generated game payload");
+        Console.WriteLine("  hack     Run a simulated hack attempt");
         Console.WriteLine("  clear    Clear and redraw the terminal");
         Console.WriteLine("  exit     End the game");
     }

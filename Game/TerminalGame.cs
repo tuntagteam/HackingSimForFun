@@ -45,6 +45,9 @@ public sealed class TerminalGame(TerminalUi ui, SimulationEngine simulation)
             case "breach":
                 await simulation.RunBreachAsync();
                 break;
+            case "hack":
+                await simulation.RunHackAsync();
+                break;
             case "decrypt":
                 await simulation.RunDecryptAsync();
                 break;

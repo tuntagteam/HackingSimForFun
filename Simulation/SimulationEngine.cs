@@ -35,6 +35,24 @@ public sealed class SimulationEngine(TerminalUi ui)
         ui.WriteMuted("Target was fictional; no system was accessed.");
     }
 
+    public async Task RunHackAsync()
+    {
+        ui.WriteStatus("SIMULATION: hacking into the system...", ConsoleColor.Yellow);
+        await ui.ShowProgressAsync("Hacking", 20, 55);
+
+        var success = Random.Shared.Next(0, 2) == 1;
+        if (success)
+        {
+            ui.WriteStatus("SYSTEM INTEGRITY COMPROMISED — critical vulnerabilities detected!", ConsoleColor.Red);
+            ui.WriteMuted("Simulated hack attempt failed. Security protocols activated.");
+        }
+        else
+        {
+            ui.WriteStatus("SYSTEM PROTECTIONS ACTIVATED — hack attempt blocked!", ConsoleColor.Green);
+            ui.WriteMuted("Simulated hack attempt failed. Security protocols activated.");
+        }
+    }
+
     public async Task RunDecryptAsync()
     {
         ui.WriteStatus("SIMULATION: decoding synthetic cipher block...", ConsoleColor.Yellow);
